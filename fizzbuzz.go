@@ -3,11 +3,7 @@ package fizzbuzz
 import "strconv"
 
 func FizzBuzz(input int) string {
-	if input%3 == 0 || input%5 == 0 {
-		return IsFizzBuzz(input)
-	}
-
-	return strconv.Itoa(input)
+	return IsFizzBuzz(input)
 }
 
 func IsFizzBuzz(n int) string {
@@ -21,5 +17,10 @@ func IsFizzBuzz(n int) string {
 		false: "",
 	}
 
-	return isFizz[n%3 == 0] + isBuzz[n%5 == 0]
+	isNormal := map[bool]string{
+		true:  strconv.Itoa(n),
+		false: "",
+	}
+
+	return isFizz[n%3 == 0] + isBuzz[n%5 == 0] + isNormal[n%3 != 0 && n%5 != 0]
 }

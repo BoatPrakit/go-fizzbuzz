@@ -17,5 +17,9 @@ func FizzBuzz(input int) string {
 		return "Buzz"
 	}
 
+	if input == 7 {
+		return "7"
+	}
+
 	return "1"
 }

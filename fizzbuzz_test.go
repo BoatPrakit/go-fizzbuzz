@@ -1,49 +1,32 @@
 package fizzbuzz
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func TestFizzBuzz(t *testing.T) {
-	t.Run("should return 1 when input 1", func(t *testing.T) {
-		input := 1
 
-		got := FizzBuzz(input)
-		want := "1"
+	testcases := []struct {
+		input    int
+		expected string
+	}{
+		{1, "1"},
+		{2, "2"},
+		{3, "Fizz"},
+		{4, "4"},
+	}
 
-		if got != want {
-			t.Errorf("want %v but got %v", want, got)
-		}
-	})
+	for _, testcase := range testcases {
+		t.Run(fmt.Sprintf("should return %v when input %v", testcase.expected, testcase.input), func(t *testing.T) {
+			input := testcase.input
 
-	t.Run("should return 2 when input 2", func(t *testing.T) {
-		input := 2
+			got := FizzBuzz(input)
+			want := testcase.expected
 
-		got := FizzBuzz(input)
-		want := "2"
-
-		if got != want {
-			t.Errorf("want %v but got %v", want, got)
-		}
-	})
-
-	t.Run("should return Fizz when input 3", func(t *testing.T) {
-		input := 3
-
-		got := FizzBuzz(input)
-		want := "Fizz"
-
-		if got != want {
-			t.Errorf("want %v but got %v", want, got)
-		}
-	})
-
-	t.Run("should return 4 when input 4", func(t *testing.T) {
-		input := 4
-
-		got := FizzBuzz(input)
-		want := "4"
-
-		if got != want {
-			t.Errorf("want %v but got %v", want, got)
-		}
-	})
+			if got != want {
+				t.Errorf("want %v but got %v", want, got)
+			}
+		})
+	}
 }

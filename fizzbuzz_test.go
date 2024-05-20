@@ -12,7 +12,7 @@ func TestFizzBuzz(t *testing.T) {
 		expected string
 	}{
 		{1, "1"},
-		// {2, "2"},
+		{2, "2"},
 		// {3, "Fizz"},
 		// {4, "4"},
 		// {5, "Buzz"},

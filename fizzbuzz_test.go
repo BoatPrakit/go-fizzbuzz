@@ -23,7 +23,7 @@ func TestFizzBuzz(t *testing.T) {
 		{10, "Buzz"},
 		{11, "11"},
 		{12, "Fizz"},
-		// {13, "13"},
+		{13, "13"},
 		// {14, "14"},
 		// {15, "FizzBuzz"},
 	}

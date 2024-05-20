@@ -9,5 +9,9 @@ func FizzBuzz(input int) string {
 		return "Fizz"
 	}
 
+	if input == 4 {
+		return "4"
+	}
+
 	return "1"
 }

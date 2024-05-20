@@ -3,18 +3,18 @@ package fizzbuzz
 import "strconv"
 
 func FizzBuzz(input int) string {
-	if input == 3 || input == 6 || input == 5 {
-		return Fizz(input) + Buzz(input)
+	if input%3 == 0 || input == 5 {
+		return Fizz(input%3 == 0) + Buzz(input)
 	}
 	return strconv.Itoa(input)
 }
 
-func Fizz(input int) string {
+func Fizz(b bool) string {
 	fizz := map[bool]string{
 		true:  "Fizz",
 		false: "",
 	}
-	return fizz[input == 3 || input == 6]
+	return fizz[b]
 }
 
 func Buzz(input int) string {

@@ -18,7 +18,7 @@ func TestFizzBuzz(t *testing.T) {
 		{5, "Buzz"},
 		{6, "Fizz"},
 		{7, "7"},
-		// {8, "8"},
+		{8, "8"},
 		// {9, "Fizz"},
 		// {10, "Buzz"},
 		// {11, "11"},
